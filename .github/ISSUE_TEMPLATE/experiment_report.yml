@@ -1,0 +1,57 @@
+name: Experiment / protocol report
+about: Share repeatable BLE protocol findings, sensor logs, or decoding corrections.
+title: "Experiment: "
+labels: [research, protocol]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this for `FED9`, `FE00`, sensor mapping, dock events, or app-behavior experiments.
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - FED9 telemetry
+        - FED0 movement
+        - FED1 head
+        - FED2 light
+        - FED8 battery/power
+        - FE00 gestures
+        - Phone dock/mount
+        - Flutter/mobile app idea
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: setup
+    attributes:
+      label: Setup
+      description: Robot position, phone attached/removed, USB connected/removed, surface, app state.
+    validations:
+      required: true
+  - type: textarea
+    id: command
+    attributes:
+      label: Command used
+      render: bash
+      placeholder: ./.venv/bin/python looi_control_lab.py --fed9-angle-test --quiet-ble
+    validations:
+      required: true
+  - type: textarea
+    id: sequence
+    attributes:
+      label: Physical action sequence
+      description: Exactly what you did during each step.
+    validations:
+      required: true
+  - type: textarea
+    id: packets
+    attributes:
+      label: Observed packets / analysis
+      render: text
+  - type: textarea
+    id: conclusion
+    attributes:
+      label: Proposed conclusion
+      description: What should be updated in the docs or decoder?

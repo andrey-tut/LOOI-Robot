@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Local logs and experiment output
+looi_control_logs/
+looi_probe_runs/
+looi_lab.csv
+looi_probe_log.csv
+looi_control_logs*.zip
+fed9_*.csv
+
+# macOS / editor
+.DS_Store
+._*
+.idea/
+.vscode/
+
+# Local scratch output
+dk_ja_results/
