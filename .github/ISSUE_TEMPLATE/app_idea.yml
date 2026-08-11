@@ -1,0 +1,28 @@
+name: Future app idea
+about: Suggest a Flutter/mobile companion app feature.
+title: "App idea: "
+labels: [idea, app]
+body:
+  - type: textarea
+    id: idea
+    attributes:
+      label: Idea
+      description: What should the future app do?
+    validations:
+      required: true
+  - type: textarea
+    id: user_value
+    attributes:
+      label: Why it is useful or fun
+    validations:
+      required: true
+  - type: textarea
+    id: robot_capabilities
+    attributes:
+      label: Robot capabilities needed
+      placeholder: Movement, head, light, touch sensors, camera, voice, notifications, AI tools...
+  - type: textarea
+    id: safety
+    attributes:
+      label: Safety / privacy concerns
+      placeholder: Movement limits, camera/microphone permissions, child mode, local-only mode...

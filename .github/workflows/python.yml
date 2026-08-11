@@ -1,0 +1,32 @@
+name: Python syntax check
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  syntax:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install dependencies
+        run: python -m pip install -r requirements.txt
+      - name: Compile Python files
+        run: |
+          python -m py_compile \
+            looi_keyboard_control.py \
+            looi_control_lab.py \
+            looi_analyze_sensors.py \
+            looi_interactive_probe.py \
+            wasd.py \
+            connect.py \
+            looi_probe.py
+      - name: Check command help
+        run: |
+          python looi_keyboard_control.py --help
+          python looi_control_lab.py --help
+          python looi_analyze_sensors.py --help

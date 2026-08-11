@@ -1,0 +1,51 @@
+name: Bug report
+about: Report a problem with Python control, BLE connection, or documentation.
+title: "Bug: "
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting a problem. Please avoid attaching private logs without reviewing them first.
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: What went wrong?
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: Commands and physical actions.
+      placeholder: |
+        1. Run `./.venv/bin/python looi_control_lab.py ...`
+        2. Press ...
+        3. Robot ...
+    validations:
+      required: true
+  - type: input
+    id: platform
+    attributes:
+      label: Platform
+      placeholder: macOS 15, Python 3.13, Bleak 0.22
+  - type: input
+    id: robot
+    attributes:
+      label: Robot / app / firmware version if known
+      placeholder: Unknown
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant logs
+      description: Paste the important lines or attach the run directory if safe.
+      render: text
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checklist
+      options:
+        - label: I closed the official LOOI app before testing.
+        - label: I tested in a safe area and stopped the robot if movement was unexpected.
+        - label: I removed private information from logs before posting.
